@@ -14,7 +14,7 @@ if __name__=='__main__':
     match_test_name = re.compile(r'^CAIRO_TEST.*\((.*),.*')
 
     for fname in args.input:
-        with open(fname, 'rb') as f:
+        with open(fname, 'r', encoding='UTF-8') as f:
             for l in f.readlines():
                 if match_test_line.match(l):
                     test_names.append(match_test_name.match(l).group(1))
